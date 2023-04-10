@@ -86,3 +86,17 @@ D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Publ
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Student.Actions.Materials.resources
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Student.Actions.Tests.resources
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Student.Menu.resources
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\BouncyCastle.Crypto.dll
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\Google.Protobuf.dll
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\K4os.Compression.LZ4.dll
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\K4os.Hash.xxHash.dll
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\MySql.Data.dll
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\BouncyCastle.Crypto.xml
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\Google.Protobuf.pdb
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\Google.Protobuf.xml
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\K4os.Compression.LZ4.xml
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\K4os.Hash.xxHash.xml
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\MySql.Data.xml
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\System.Numerics.Vectors.xml

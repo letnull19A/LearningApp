@@ -38,6 +38,8 @@ namespace LearningApp.Forms.Student
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.sessionLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,19 +122,41 @@ namespace LearningApp.Forms.Student
             this.panel1.Size = new System.Drawing.Size(384, 384);
             this.panel1.TabIndex = 7;
             // 
+            // sessionLabel
+            // 
+            this.sessionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sessionLabel.Location = new System.Drawing.Point(154, 9);
+            this.sessionLabel.Name = "sessionLabel";
+            this.sessionLabel.Size = new System.Drawing.Size(628, 23);
+            this.sessionLabel.TabIndex = 11;
+            this.sessionLabel.Text = "null";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(11, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 23);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Текущая сессия:";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 571);
+            this.Controls.Add(this.sessionLabel);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главное меню";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Button button5;
@@ -147,5 +171,8 @@ namespace LearningApp.Forms.Student
         private System.Windows.Forms.Button button1;
 
         #endregion
+
+        private System.Windows.Forms.Label sessionLabel;
+        private System.Windows.Forms.Label label2;
     }
 }

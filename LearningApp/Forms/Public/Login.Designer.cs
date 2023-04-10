@@ -36,7 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,11 +51,11 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(26, 205);
+            this.button1.Location = new System.Drawing.Point(26, 202);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(235, 48);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Войти как преподаватель";
+            this.button1.Text = "Авторизоваться";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -73,6 +72,7 @@
             this.passwordField.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.passwordField.Location = new System.Drawing.Point(26, 134);
             this.passwordField.Name = "passwordField";
+            this.passwordField.PasswordChar = '#';
             this.passwordField.Size = new System.Drawing.Size(235, 32);
             this.passwordField.TabIndex = 3;
             // 
@@ -97,27 +97,15 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.loginField);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.passwordField);
-            this.panel1.Location = new System.Drawing.Point(271, 211);
+            this.panel1.Location = new System.Drawing.Point(265, 177);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(282, 330);
+            this.panel1.Size = new System.Drawing.Size(282, 277);
             this.panel1.TabIndex = 6;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(26, 259);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(235, 48);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "войти как студент";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Login
             // 
@@ -134,9 +122,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-        }
 
-        private System.Windows.Forms.Button button2;
+        }
 
         private System.Windows.Forms.Panel panel1;
 
