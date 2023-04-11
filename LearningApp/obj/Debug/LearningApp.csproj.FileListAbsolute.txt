@@ -86,3 +86,7 @@ D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Publ
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Student.Actions.Materials.resources
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Student.Actions.Tests.resources
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Student.Menu.resources
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\LearningApp.exe.manifest
+D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\LearningApp.application
+D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.exe.manifest
+D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.application
