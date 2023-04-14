@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -8,11 +9,11 @@ namespace LearningApp.Forms.Public
 {
     public partial class Login : Form
     {
-        private readonly string _connection
-            = @"Server=(localdb)\mssqllocaldb;Database=RuLearningApp;Trusted_Connection=true";
+        private readonly string _connection;
         public Login()
         {
             InitializeComponent();
+            _connection = ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString;
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -68,7 +69,6 @@ namespace LearningApp.Forms.Public
 
                     ClearForm();
 
-
                     var role = ApplicationContext.GetSession().Value.RoleId;
                     Form menu = this;
 
@@ -85,7 +85,7 @@ namespace LearningApp.Forms.Public
                     }
 
                     menu?.Show();
-
+                    menu.FormClosed += (a, c) => Application.Exit();
                     Hide();
                 }
                 else
@@ -104,5 +104,14 @@ namespace LearningApp.Forms.Public
             passwordField.Text = string.Empty;
         }
 
+        private void configureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Settings().ShowDialog();
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Guide().ShowDialog();
+        }
     }
 }

@@ -72,6 +72,7 @@ namespace LearningApp.Forms.Teacher
             this.button2.TabIndex = 3;
             this.button2.Text = "Тесты";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -155,6 +156,7 @@ namespace LearningApp.Forms.Teacher
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Label label2;

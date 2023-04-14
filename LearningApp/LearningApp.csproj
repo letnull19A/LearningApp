@@ -91,6 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationContext.cs" />
+    <Compile Include="Entities\TestQuestionUnit.cs" />
+    <Compile Include="Entities\TestUnit.cs" />
+    <Compile Include="Entities\TestVariantUnit.cs" />
     <Compile Include="Forms\Public\Guide.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +105,12 @@
     </Compile>
     <Compile Include="Forms\Public\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Public\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Public\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Student\Actions\Materials.cs">
       <SubType>Form</SubType>
@@ -121,12 +130,6 @@
     <Compile Include="Forms\Student\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Teacher\Actions\Students\StudentEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Teacher\Actions\Students\StudentEdit.Designer.cs">
-      <DependentUpon>StudentEdit.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Teacher\Actions\Students\StudentList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +141,18 @@
     </Compile>
     <Compile Include="Forms\Teacher\Actions\Students\StudentRegistration.Designer.cs">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Teacher\Actions\Tests\AddTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Teacher\Actions\Tests\AddTest.Designer.cs">
+      <DependentUpon>AddTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Teacher\Actions\Tests\TestList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Teacher\Actions\Tests\TestList.Designer.cs">
+      <DependentUpon>TestList.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Teacher\Menu.cs">
       <SubType>Form</SubType>
@@ -160,6 +175,9 @@
     <EmbeddedResource Include="Forms\Public\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Public\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Student\Actions\Materials.resx">
       <DependentUpon>Materials.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +192,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Teacher\Actions\Students\StudentRegistration.resx">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Teacher\Actions\Tests\AddTest.resx">
+      <DependentUpon>AddTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Teacher\Actions\Tests\TestList.resx">
+      <DependentUpon>TestList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Teacher\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -205,9 +229,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Teacher\Actions\Tests\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

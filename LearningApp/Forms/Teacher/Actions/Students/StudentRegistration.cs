@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
@@ -7,18 +8,15 @@ namespace LearningApp.Forms.Teacher.Actions.Students
 {
     public partial class StudentRegistration : Form
     {
-        #if release
-        private readonly string _connection
-            = @"Server=(localdb)\mssqllocaldb;Database=RuLearningApp;Trusted_Connection=true";
-        #endif
+        private readonly string _connection;
         public StudentRegistration()
         {
             InitializeComponent();
+            _connection = ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString;
         }
 
-        private async void StudentRegistration_Load(object sender, EventArgs e)
+        private void StudentRegistration_Load(object sender, EventArgs e)
         {
-            #if release
             using (SqlConnection connection = new SqlConnection(_connection))
             {
                 connection.Open();
@@ -36,17 +34,20 @@ namespace LearningApp.Forms.Teacher.Actions.Students
                 
                 connection.Close();
             }
-            #endif
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            var list = new StudentList();
+            list.FormClosed += (a, c) => Application.Exit();
+            list.Show();
+
+            Hide();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            int roleId = 1;
+            int roleId = 2;
             string name = userName.Text;
             string surname = userSurname.Text;
             string fatherName = userFatherName.Text;
@@ -55,7 +56,12 @@ namespace LearningApp.Forms.Teacher.Actions.Students
             string confirm = confirmPassword.Text;
             string groupName = userGroup.Text;
 
-            #if release
+            if (!password.Equals(confirm)) 
+            {
+                MessageBox.Show("Пароли не совпадают!");
+                return;
+            }
+
             using(SqlConnection connection = new SqlConnection(_connection))
             {
                 connection.Open();
@@ -90,9 +96,21 @@ namespace LearningApp.Forms.Teacher.Actions.Students
 
                 MessageBox.Show("Студент добавлен в базу данных!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                ClearForm();
+
                 connection.Close();
             }
-            #endif
+        }
+
+        private void ClearForm() 
+        {
+            userName.Text = string.Empty;
+            userSurname.Text = string.Empty;
+            userFatherName.Text = string.Empty;
+            userLogin.Text = string.Empty;
+            userPassword.Text = string.Empty;
+            confirmPassword.Text = string.Empty;
+            userGroup.Text = string.Empty;
         }
     }
 }
