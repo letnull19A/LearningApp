@@ -34,10 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.AnswerField = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsRightAnswer = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -109,6 +109,18 @@
             this.dataGridView1.Size = new System.Drawing.Size(586, 168);
             this.dataGridView1.TabIndex = 9;
             // 
+            // AnswerField
+            // 
+            this.AnswerField.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.AnswerField.FillWeight = 400F;
+            this.AnswerField.HeaderText = "Ответ";
+            this.AnswerField.Name = "AnswerField";
+            // 
+            // IsRightAnswer
+            // 
+            this.IsRightAnswer.HeaderText = "Правильный вариант?";
+            this.IsRightAnswer.Name = "IsRightAnswer";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(12, 12);
@@ -129,18 +141,6 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // AnswerField
-            // 
-            this.AnswerField.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.AnswerField.FillWeight = 400F;
-            this.AnswerField.HeaderText = "Ответ";
-            this.AnswerField.Name = "AnswerField";
-            // 
-            // IsRightAnswer
-            // 
-            this.IsRightAnswer.HeaderText = "Правильный вариант?";
-            this.IsRightAnswer.Name = "IsRightAnswer";
-            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(232, 492);
@@ -159,6 +159,7 @@
             this.button6.TabIndex = 13;
             this.button6.Text = "Сохранить изменения";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label3
             // 

@@ -12,6 +12,7 @@ namespace LearningApp.Forms.Teacher.Actions
     public partial class StudentList : Form
     {
         private readonly string _connection;
+
         public StudentList()
         {
             InitializeComponent();

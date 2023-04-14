@@ -1,35 +1,44 @@
 ﻿using LearningApp.Entities;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace LearningApp.Forms.Teacher.Actions.Tests
 {
     public partial class AddTest : Form
     {
+        private readonly string _connection;
         private TestUnit _currentTest;
         private int _currentTestNumber = 0;
+        private bool _isChanged = false;
 
         public AddTest()
         {
             InitializeComponent();
             _currentTest = new TestUnit();
-            _currentTest.Questions = new List<TestQuestionUnit>();
-            _currentTest.Questions.Add(new TestQuestionUnit());
+            _currentTest.Questions = new List<TestQuestionUnit>
+            {
+                new TestQuestionUnit()
+            };
+            _connection = ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var ask = MessageBox.Show(
-                "У Вас есть несохранённые изменения, при выходе изменения будут утеряны",
-                "Подтветждение действий",
-                MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Question);
+            if (_isChanged == true)
+            {
 
-            if (ask == DialogResult.Cancel)
-                return;
+                var ask = MessageBox.Show(
+                    "У Вас есть несохранённые изменения, при выходе изменения будут утеряны",
+                    "Подтветждение действий",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Question);
+
+                if (ask == DialogResult.Cancel)
+                    return;
+            }
 
             Hide();
 
@@ -147,5 +156,40 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
                     });
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            Guid testId = Guid.NewGuid();
+
+            using (var connection = new SqlConnection(_connection))
+            {
+                var addTestQuery = new SqlCommand($"INSERT INTO tests (id, themeName) VALUES ({testId}, {richTextBox2.Text})");
+
+                connection.Open();
+
+                addTestQuery.Connection = connection;
+                addTestQuery.ExecuteNonQuery();
+
+                MessageBox.Show("Тест успешно добавлен!");
+
+                connection.Close();
+            }
+        }
+
+        private string CollectTestQuestionsToQuery() 
+        {
+            string result = string.Empty;
+
+            _currentTest.Questions.ForEach(question => 
+            {
+                result += "INSERT INTO ";
+            });
+
+            return result;
+        }
+
+        private void CollectTestAnswersToQuery() 
+        { }
     }
 }
