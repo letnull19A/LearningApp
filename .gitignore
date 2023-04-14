@@ -1,2 +1,3 @@
 .vs
-./LearningApp/bin/*
+bin/**
+obj/**
