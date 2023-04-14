@@ -92,11 +92,14 @@ D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Stud
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Student.Menu.resources
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\LearningApp.exe.manifest
 D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\LearningApp.application
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.exe.manifest
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.application
 =======
+=======
+>>>>>>> v_0.0.1
 =======
 >>>>>>> v_0.0.1
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Teacher.Actions.StudentList.resources
@@ -113,6 +116,9 @@ D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Publ
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Teacher.Actions.Tests.TestList.resources
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Teacher.Actions.Tests.AddTest.resources
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> v_0.0.1
+=======
 >>>>>>> v_0.0.1
 =======
 >>>>>>> v_0.0.1
