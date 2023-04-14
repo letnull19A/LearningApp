@@ -95,11 +95,14 @@ D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Stud
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\LearningApp.exe.manifest
 D:\Others\RiderProjects\LearningApp\LearningApp\bin\Debug\LearningApp.application
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.exe.manifest
 D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.application
 =======
+=======
+>>>>>>> v_0.0.1
 =======
 >>>>>>> v_0.0.1
 =======
@@ -125,6 +128,9 @@ D:\Others\RiderProjects\LearningApp\LearningApp\obj\Debug\LearningApp.Forms.Teac
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> v_0.0.1
+=======
 >>>>>>> v_0.0.1
 =======
 >>>>>>> v_0.0.1
