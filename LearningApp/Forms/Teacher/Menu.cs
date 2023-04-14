@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
 using LearningApp.Forms.Public;
 using LearningApp.Forms.Teacher.Actions;
-using Microsoft.Data.SqlClient;
+using LearningApp.Forms.Teacher.Actions.Tests;
 
 namespace LearningApp.Forms.Teacher
 {
     public partial class Menu : Form
     {
-        
-        
         public Menu()
         {
             InitializeComponent();
@@ -26,23 +23,38 @@ namespace LearningApp.Forms.Teacher
         private void button5_Click(object sender, EventArgs e)
         {
             ApplicationContext.EndSession();
-            Hide();
 
             var login = new Login();
+            login.FormClosed += (a, c) => Application.Exit();
             login.Show();
+
+            Hide();
+        }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            Hide();
-            
+        {            
             var form = new StudentList();
+            form.FormClosed += (a, c) => Application.Exit();
             form.Show();
+
+            Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             new Guide().Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hide();
+
+            new TestList().Show();
         }
     }
 }

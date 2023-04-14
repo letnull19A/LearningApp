@@ -1,27 +1,23 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
-using System.Threading;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
-using LearningApp.Forms.Teacher.Actions;
 using Microsoft.Data.SqlClient;
 
 namespace LearningApp.Forms.Public
 {
     public partial class Login : Form
     {
-        #if Release
-        private readonly string _connection 
-            = @"Server=(localdb)\mssqllocaldb;Database=RuLearningApp;Trusted_Connection=true";
-        #endif
+        private readonly string _connection;
         public Login()
         {
             InitializeComponent();
+            _connection = ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString;
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-            #if Release
             SqlConnection connection = new SqlConnection(_connection);
 
             try
@@ -39,7 +35,6 @@ namespace LearningApp.Forms.Public
                     connection.Close();
                 }
             }
-            #endif
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -47,7 +42,6 @@ namespace LearningApp.Forms.Public
             var login = loginField.Text ?? string.Empty;
             var password = passwordField.Text ?? string.Empty;
 
-            #if Release
             using (SqlConnection connection = new SqlConnection(_connection))
             {
                 connection.Open();
@@ -57,7 +51,7 @@ namespace LearningApp.Forms.Public
 
                 SqlParameter loginParameter = new SqlParameter("@login", login);
                 SqlParameter passwordParameter = new SqlParameter("@password", password);
-                
+
                 command.Parameters.Add(loginParameter);
                 command.Parameters.Add(passwordParameter);
 
@@ -73,30 +67,51 @@ namespace LearningApp.Forms.Public
                         RoleName = reader["role_name"].ToString()
                     });
 
-                    Hide();
+                    ClearForm();
 
-                    loginField.Text = string.Empty;
-                    passwordField.Text = string.Empty;
-            #endif        
-                    var menu = new Teacher.Menu();
-                    menu.Show();
-                    
+                    var role = ApplicationContext.GetSession().Value.RoleId;
+                    Form menu = this;
+
+                    switch (role)
+                    {
+                        case 1:
+                            menu = new Teacher.Menu();
+                            break;
+                        case 2:
+                            menu = new Student.Menu();
+                            break;
+                        default:
+                            throw new Exception("Произошла неизвестная ошибка!");
+                    }
+
+                    menu?.Show();
+                    menu.FormClosed += (a, c) => Application.Exit();
                     Hide();
-            #if Release
+                }
+                else
+                {
+                    MessageBox.Show("Пользователь с такими данными не найден!");
                 }
 
                 reader.Close();
                 connection.Close();
             }
-            #endif
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ClearForm()
         {
-            var menu = new Student.Menu();
-            menu.Show();
-            
-            Hide();
+            loginField.Text = string.Empty;
+            passwordField.Text = string.Empty;
+        }
+
+        private void configureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Settings().ShowDialog();
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Guide().ShowDialog();
         }
     }
 }

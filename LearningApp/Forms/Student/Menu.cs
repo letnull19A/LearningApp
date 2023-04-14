@@ -40,5 +40,12 @@ namespace LearningApp.Forms.Student
         {
             new Guide().Show();
         }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            var session = ApplicationContext.GetSession().Value;
+
+            sessionLabel.Text = session.Name + " " + session.Surname + " Роль: " + session.RoleName;
+        }
     }
 }
