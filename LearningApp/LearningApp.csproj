@@ -262,6 +262,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Forms\Teacher\Actions\Tests\" />
   </ItemGroup>
@@ -277,6 +278,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+=======
+  <ItemGroup />
+>>>>>>> v_0.0.1
 =======
   <ItemGroup />
 >>>>>>> v_0.0.1
