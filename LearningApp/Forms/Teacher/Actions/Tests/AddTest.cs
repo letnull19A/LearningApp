@@ -160,13 +160,13 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
         private void button6_Click(object sender, EventArgs e)
         {
 
-            Guid testId = Guid.NewGuid();
+            SaveVariants();
 
             using (var connection = new SqlConnection(_connection))
             {
-                var addTestQuery = new SqlCommand($"INSERT INTO tests (id, themeName) VALUES ({testId}, {richTextBox2.Text})");
-
                 connection.Open();
+
+                var addTestQuery = new SqlCommand(MakeQuery());
 
                 addTestQuery.Connection = connection;
                 addTestQuery.ExecuteNonQuery();
@@ -177,19 +177,59 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
             }
         }
 
-        private string CollectTestQuestionsToQuery() 
+        private string MakeQuery() 
+        {
+            return 
+                CollectTestData() + 
+                CollectTestQuestionsToQuery() + 
+                CollectTestVariantsToQuery();
+        }
+
+        private string CollectTestData() 
+        {
+            string result = $"INSERT INTO tests " +
+                $"(id, themeName) " +
+                $"VALUES " +
+                $"('{_currentTest.Id}', '{_currentTest.Theme}');";
+            return result;
+        }
+
+        private string CollectTestQuestionsToQuery()
         {
             string result = string.Empty;
 
-            _currentTest.Questions.ForEach(question => 
+            _currentTest.Questions.ForEach(question =>
             {
-                result += "INSERT INTO ";
+                var id = question.Id;
+                var testId = _currentTest.Id;
+
+                result += $"INSERT INTO test_questions " +
+                $"(id, testId, questionText) " +
+                $"VALUES " +
+                $"('{id}', '{testId}', '{question.Question}');";
             });
 
             return result;
         }
 
-        private void CollectTestAnswersToQuery() 
-        { }
+        private string CollectTestVariantsToQuery()
+        {
+            string result = string.Empty;
+
+            var questions = _currentTest.Questions;
+
+            questions.ForEach(question =>
+            {
+                question.TestVariants.ForEach(variant =>
+                {
+                    result += $"INSERT INTO test_variants " +
+                    $"(id, testQuestionId, answer, isRight) " +
+                    $"VALUES " +
+                    $"('{variant.Id}', '{question.Id}', '{variant.Answer}', '{variant.IsRight}');";
+                });
+            });
+
+            return result;
+        }
     }
 }

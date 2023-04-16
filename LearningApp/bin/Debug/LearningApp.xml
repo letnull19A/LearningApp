@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LearningApp</name>
+    </assembly>
+    <members>
+        <member name="F:LearningApp.Forms.Public.Guide.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Public.Guide.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Public.Guide.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Public.Login.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Public.Login.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Public.Login.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Public.Settings.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Public.Settings.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Public.Settings.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.Materials.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Materials.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Materials.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.Tests.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Tests.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Tests.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Menu.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Menu.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Menu.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Teacher.Actions.StudentList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.StudentList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.StudentList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Teacher.Actions.Students.StudentRegistration.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Students.StudentRegistration.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Students.StudentRegistration.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Teacher.Actions.Tests.AddTest.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Tests.AddTest.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Tests.AddTest.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Teacher.Actions.Tests.TestList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Tests.TestList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Tests.TestList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Teacher.Actions.Tests.ViewTest.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Tests.ViewTest.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Tests.ViewTest.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Teacher.Menu.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Menu.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Menu.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Properties.Resources">
+            <summary>
+              Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+            </summary>
+        </member>
+        <member name="P:LearningApp.Properties.Resources.ResourceManager">
+            <summary>
+              Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+            </summary>
+        </member>
+        <member name="P:LearningApp.Properties.Resources.Culture">
+            <summary>
+              Перезаписывает свойство CurrentUICulture текущего потока для всех
+              обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+            </summary>
+        </member>
+    </members>
+</doc>

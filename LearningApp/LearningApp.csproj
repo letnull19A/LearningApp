@@ -160,6 +160,12 @@
     <Compile Include="Forms\Student\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Teacher\Actions\Reports\MarkReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Teacher\Actions\Reports\MarkReport.Designer.cs">
+      <DependentUpon>MarkReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Teacher\Actions\Students\StudentList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,17 +190,17 @@
     <Compile Include="Forms\Teacher\Actions\Tests\TestList.Designer.cs">
       <DependentUpon>TestList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Teacher\Actions\Tests\ViewTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Teacher\Actions\Tests\ViewTest.Designer.cs">
+      <DependentUpon>ViewTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Teacher\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Teacher\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Teacher\StudentMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Teacher\StudentMenu.Designer.cs">
-      <DependentUpon>StudentMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -217,6 +223,9 @@
     <EmbeddedResource Include="Forms\Student\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Teacher\Actions\Reports\MarkReport.resx">
+      <DependentUpon>MarkReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Teacher\Actions\Students\StudentList.resx">
       <DependentUpon>StudentList.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,11 +238,11 @@
     <EmbeddedResource Include="Forms\Teacher\Actions\Tests\TestList.resx">
       <DependentUpon>TestList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Teacher\Actions\Tests\ViewTest.resx">
+      <DependentUpon>ViewTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Teacher\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Teacher\StudentMenu.resx">
-      <DependentUpon>StudentMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
