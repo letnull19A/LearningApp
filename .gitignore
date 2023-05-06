@@ -1,3 +1,7 @@
 .vs
 */bin/**
 */obj/**
+!*/bin/Debug/*.wav
+!*/bin/Debug/*.mp4
+!*/bin/Debug/*.txt
+!*/bin/Debug/*.config
