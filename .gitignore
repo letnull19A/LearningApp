@@ -1,8 +1,8 @@
 .vs
-LearningApp/bin/Debug
-LearningApp/obj/Debug
-!LearningApp/bin/Debug/*.wav
-!LearningApp/bin/Debug/*.chm
-!LearningApp/bin/Debug/*.mp4
-!LearningApp/bin/Debug/*.txt
-!LearningApp/bin/Debug/*.config
+*/bin/[Dd]ebug/**
+*/[Oo]bj/**
+!*/bin/[Dd]ebug/*.wav
+!*/bin/[Dd]ebug/*.chm
+!*/bin/[Dd]ebug/*.mp4
+!*/bin/[Dd]ebug/*.txt
+!*/bin/[Dd]ebug/*.config
