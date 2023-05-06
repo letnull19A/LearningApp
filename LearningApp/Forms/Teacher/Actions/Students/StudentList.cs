@@ -9,9 +9,17 @@ using SqlDataAdapter = Microsoft.Data.SqlClient.SqlDataAdapter;
 
 namespace LearningApp.Forms.Teacher.Actions
 {
+    /// <summary>
+    /// Класс для формы со списком студентов
+    /// </summary>
     public partial class StudentList : Form
     {
+        // Поле со строкой соединения с БД
         private readonly string _connection;
+
+        /// <summary>
+        /// конструктор класса StudentList
+        /// </summary>
         public StudentList()
         {
             InitializeComponent();
@@ -21,14 +29,16 @@ namespace LearningApp.Forms.Teacher.Actions
             _connection = ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString;
         }
 
+        // Обработчик нажатия на кнопку Назад
         private void button1_Click(object sender, EventArgs e)
         {
             Hide();
 
-            var menu = new Teacher.Menu();
+            var menu = new Menu();
             menu.Show();
         }
 
+        // Метод для загрузки данныз из БД
         private void LoadDataFromSQL()
         {
             using (SqlConnection connection = new SqlConnection(_connection))
@@ -57,7 +67,8 @@ namespace LearningApp.Forms.Teacher.Actions
                 dataGridView1.DataSource = dataSet.Tables[0];
                 dataGridView1.Columns[0].HeaderText = "ID студента";
                 dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[0].ReadOnly = true;
+                dataGridView1.Columns[0].Visible = false;
+                
 
                 dataGridView1.Columns[1].HeaderText = "Имя";
                 dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -78,20 +89,22 @@ namespace LearningApp.Forms.Teacher.Actions
             }
         }
 
+        // Обработчик события загрузки формы
         private void StudentList_Load(object sender, EventArgs e)
         {
             LoadDataFromSQL();
         }
 
+        // Обработчик собятия нажатия на кнопку Добавить
         private void button2_Click(object sender, EventArgs e)
         {
             var form = new StudentRegistration();
-            form.FormClosed += (a, c) => Application.Exit();
             form.Show();
 
             Hide();
         }
 
+        // Обработчик события на кнопку Добавить
         private void button3_Click(object sender, EventArgs e)
         {
             LoadDataFromSQL();
@@ -99,6 +112,7 @@ namespace LearningApp.Forms.Teacher.Actions
             dataGridView1.Refresh();
         }
 
+        // Обработчик события на кнопку Сохранить изменения
         private void button4_Click(object sender, EventArgs e)
         {
             using (SqlConnection connection = new SqlConnection(_connection))
@@ -137,6 +151,7 @@ namespace LearningApp.Forms.Teacher.Actions
             }
         }
 
+        // Обработчик на нажатие на кнопку Удалить
         private void button5_Click(object sender, EventArgs e)
         {
             string userId = dataGridView1.CurrentRow.Cells[0].Value.ToString();
@@ -180,7 +195,13 @@ namespace LearningApp.Forms.Teacher.Actions
             LoadDataFromSQL();
             dataGridView1.Update();
             dataGridView1.Refresh();
+        }
 
+        // Обреботчик события на закрытие формы
+        private void StudentList_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Hide();
+            new Menu().Show();
         }
     }
 }

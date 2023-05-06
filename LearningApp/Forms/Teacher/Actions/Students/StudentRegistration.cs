@@ -6,15 +6,24 @@ using Microsoft.Data.SqlClient;
 
 namespace LearningApp.Forms.Teacher.Actions.Students
 {
+    /// <summary>
+    /// Класс формы Регистрации студентов
+    /// </summary>
     public partial class StudentRegistration : Form
     {
+        //
         private readonly string _connection;
+
+        /// <summary>
+        /// Конструктор класса StudentRegistration
+        /// </summary>
         public StudentRegistration()
         {
             InitializeComponent();
             _connection = ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString;
         }
 
+        // Обработчик события загрузки формы
         private void StudentRegistration_Load(object sender, EventArgs e)
         {
             using (SqlConnection connection = new SqlConnection(_connection))
@@ -36,6 +45,7 @@ namespace LearningApp.Forms.Teacher.Actions.Students
             }
         }
 
+        // Обработчик событий при нажатии на кнопку К списку студентов
         private void button1_Click(object sender, EventArgs e)
         {
             var list = new StudentList();
@@ -45,6 +55,7 @@ namespace LearningApp.Forms.Teacher.Actions.Students
             Hide();
         }
 
+        // Обработчик событий при нажатии на кнопку Создать учётную запись
         private void button2_Click_1(object sender, EventArgs e)
         {
             int roleId = 2;
@@ -102,6 +113,7 @@ namespace LearningApp.Forms.Teacher.Actions.Students
             }
         }
 
+        // Метод очистки формы
         private void ClearForm() 
         {
             userName.Text = string.Empty;
@@ -111,6 +123,12 @@ namespace LearningApp.Forms.Teacher.Actions.Students
             userPassword.Text = string.Empty;
             confirmPassword.Text = string.Empty;
             userGroup.Text = string.Empty;
+        }
+
+        // Обработчик закрытия формы
+        private void StudentRegistration_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            button1_Click(sender, e);
         }
     }
 }

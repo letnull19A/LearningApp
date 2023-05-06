@@ -4,17 +4,20 @@ using LearningApp.Forms.Public;
 
 namespace LearningApp
 {
+    /// <summary>
+    /// Класс программы
+    /// </summary>
     static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Точка входа приложения
         /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new StartForm());
         }
     }
 }

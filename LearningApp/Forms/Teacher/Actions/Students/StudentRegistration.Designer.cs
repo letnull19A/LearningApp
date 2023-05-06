@@ -63,9 +63,14 @@ namespace LearningApp.Forms.Teacher.Actions.Students
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::LearningApp.Properties.Resources._133_Orange_Juice;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 33);
+            this.button1.Size = new System.Drawing.Size(174, 33);
             this.button1.TabIndex = 9;
             this.button1.Text = "К списку студентов";
             this.button1.UseVisualStyleBackColor = true;
@@ -73,7 +78,7 @@ namespace LearningApp.Forms.Teacher.Actions.Students
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.Controls.Add(this.userSurname);
             this.panel2.Controls.Add(this.userGroup);
             this.panel2.Controls.Add(this.label7);
@@ -200,7 +205,11 @@ namespace LearningApp.Forms.Teacher.Actions.Students
             // 
             // button2
             // 
+            this.button2.BackgroundImage = global::LearningApp.Properties.Resources._085_October_Silence;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(223, 408);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(309, 48);
@@ -230,13 +239,19 @@ namespace LearningApp.Forms.Teacher.Actions.Students
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::LearningApp.Properties.Resources.j6czYd0vb6A;
             this.ClientSize = new System.Drawing.Size(794, 571);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(810, 610);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(810, 610);
             this.Name = "StudentRegistration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление студента";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StudentRegistration_FormClosed);
             this.Load += new System.EventHandler(this.StudentRegistration_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
