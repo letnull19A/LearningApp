@@ -4,21 +4,64 @@
         <name>LearningApp</name>
     </assembly>
     <members>
-        <member name="F:LearningApp.Forms.Public.Guide.components">
+        <member name="T:LearningApp.ApplicationContext">
             <summary>
-            Required designer variable.
+            Класс отвечающий за контекст приложения
             </summary>
         </member>
-        <member name="M:LearningApp.Forms.Public.Guide.Dispose(System.Boolean)">
+        <member name="M:LearningApp.ApplicationContext.CreateContext">
             <summary>
-            Clean up any resources being used.
+            Метод возвращающий контекст приложения
             </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:LearningApp.Forms.Public.Guide.InitializeComponent">
+        <member name="M:LearningApp.ApplicationContext.GetSession">
             <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
+            Метод возвращяющий сессию приложения
+            </summary>
+        </member>
+        <member name="M:LearningApp.ApplicationContext.StartSession(LearningApp.Session)">
+            <summary>
+            Метод начинающий сессию
+            </summary>
+        </member>
+        <member name="M:LearningApp.ApplicationContext.EndSession">
+            <summary>
+            Метод завершающий сессию
+            </summary>
+        </member>
+        <member name="M:LearningApp.ApplicationContext.GetConnectionString">
+            <summary>
+            Метод для получения строки соединения
+            </summary>
+        </member>
+        <member name="T:LearningApp.Entities.TestQuestionUnit">
+            <summary>
+            Класс отвечающий за вопрос в тесте
+            </summary>
+        </member>
+        <member name="P:LearningApp.Entities.TestQuestionUnit.Id">
+            <summary>
+            Id вопроса
+            </summary>
+        </member>
+        <member name="P:LearningApp.Entities.TestQuestionUnit.Question">
+            <summary>
+            Текст вопроса
+            </summary>
+        </member>
+        <member name="P:LearningApp.Entities.TestQuestionUnit.TestVariants">
+            <summary>
+            Список вариантов ответов
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Public.Login">
+            <summary>
+            Класс Login отвечает за обработку событий формы Login
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Public.Login.#ctor">
+            <summary>
+            Конвтруктор класса Login
             </summary>
         </member>
         <member name="F:LearningApp.Forms.Public.Login.components">
@@ -38,6 +81,16 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:LearningApp.Forms.Public.Settings">
+            <summary>
+            Класс формы с настройками
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Public.Settings.#ctor">
+            <summary>
+            Конструктор класса Settings
+            </summary>
+        </member>
         <member name="F:LearningApp.Forms.Public.Settings.components">
             <summary>
             Required designer variable.
@@ -55,38 +108,294 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="F:LearningApp.Forms.Student.Actions.Materials.components">
+        <member name="T:LearningApp.Forms.Public.StartForm">
+            <summary>
+            Класс стартовой формы
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Public.StartForm.#ctor">
+            <summary>
+            Конструтор класса StartForm
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Public.StartForm.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:LearningApp.Forms.Student.Actions.Materials.Dispose(System.Boolean)">
+        <member name="M:LearningApp.Forms.Public.StartForm.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:LearningApp.Forms.Student.Actions.Materials.InitializeComponent">
+        <member name="M:LearningApp.Forms.Public.StartForm.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="F:LearningApp.Forms.Student.Actions.Tests.components">
+        <member name="F:LearningApp.Forms.Student.Actions.Dictation.DictationList.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:LearningApp.Forms.Student.Actions.Tests.Dispose(System.Boolean)">
+        <member name="M:LearningApp.Forms.Student.Actions.Dictation.DictationList.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:LearningApp.Forms.Student.Actions.Tests.InitializeComponent">
+        <member name="M:LearningApp.Forms.Student.Actions.Dictation.DictationList.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.Dictation.DictationView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Dictation.DictationView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Dictation.DictationView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Student.Actions.MaterialList">
+            <summary>
+            Класс формы списка материалов
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.MaterialList.#ctor">
+            <summary>
+            Конструктор класса MaterialList
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.MaterialList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.MaterialList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.MaterialList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Student.Actions.Materials.MaterialView">
+            <summary>
+            Кдасс формы просмотра материалов
+            </summary>
+        </member>
+        <member name="P:LearningApp.Forms.Student.Actions.Materials.MaterialView.FileName">
+            <summary>
+            Свойство для поля _fileName
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Materials.MaterialView.#ctor">
+            <summary>
+            Конструктор класса MaterialView
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.Materials.MaterialView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Materials.MaterialView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Materials.MaterialView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Student.Actions.Reports.MarkReport">
+            <summary>
+            Класс отвечающий за отображение отчёта об успеваемости
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Reports.MarkReport.#ctor">
+            <summary>
+            Конструктор класса MarkReport
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.Reports.MarkReport.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Reports.MarkReport.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Reports.MarkReport.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Student.Actions.Tests.TestExecution">
+            <summary>
+            Класс отвечающий за прохождение теста
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.Tests.TestExecution.HightMark">
+            <summary>
+            Константа оценки Отлично
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.Tests.TestExecution.GoodMark">
+            <summary>
+            Константа оценки Хорошо
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.Tests.TestExecution.MiddleMark">
+            <summary>
+            Константа оценки Удовлетворительно
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.Tests.TestExecution.FailMark">
+            <summary>
+            Константа оценки Неудовлетворительно
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Tests.TestExecution.#ctor">
+            <summary>
+            Конструктор класса TestExecution
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.Tests.TestExecution.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Tests.TestExecution.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Tests.TestExecution.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Student.Actions.Tests.TestResultPopup">
+            <summary>
+            Класс отвечающий за отображение формы с результатами теста
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Tests.TestResultPopup.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LearningApp.Forms.Student.Actions.Tests.TestResultPopup.Stats">
+            <summary>
+            Свойство для поля со статистикой теста
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.Tests.TestResultPopup.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Tests.TestResultPopup.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Tests.TestResultPopup.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Student.Actions.TestList">
+            <summary>
+            Класс отвечающий за отображения списка с тестами
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.TestList.#ctor">
+            <summary>
+            Конструктор класса TestList
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.TestList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.TestList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.TestList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Student.Actions.Videos.VideoList">
+            <summary>
+            Класс отвечающий за вывод видеоматериалов
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Videos.VideoList.#ctor">
+            <summary>
+            Конструктор класса VideoList
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Student.Actions.Videos.VideoList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Videos.VideoList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Actions.Videos.VideoList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Student.Menu">
+            <summary>
+            Класс отвечающий за отображение меню
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Student.Menu.#ctor">
+            <summary>
+            Конструктор класса Menu
             </summary>
         </member>
         <member name="F:LearningApp.Forms.Student.Menu.components">
@@ -106,6 +415,97 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:LearningApp.Forms.Teacher.Actions.Materials.MaterialAdd">
+            <summary>
+            Класс формы MaterialAdd
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Materials.MaterialAdd.#ctor">
+            <summary>
+            Конструктор класса MaterialAdd
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Teacher.Actions.Materials.MaterialAdd.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Materials.MaterialAdd.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Materials.MaterialAdd.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Teacher.Actions.Materials.MaterialList">
+            <summary>
+            Класс формы MatrialList
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Materials.MaterialList.#ctor">
+            <summary>
+            Конструктор класа MaterialList
+            </summary>
+        </member>
+        <member name="F:LearningApp.Forms.Teacher.Actions.Materials.MaterialList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Materials.MaterialList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Materials.MaterialList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Teacher.Actions.Reports.MarkReport">
+            <summary>
+            Класс формы MarkReport
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Reports.MarkReport.#ctor">
+            
+            
+            
+        </member>
+        <member name="F:LearningApp.Forms.Teacher.Actions.Reports.MarkReport.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Reports.MarkReport.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Reports.MarkReport.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Teacher.Actions.StudentList">
+            <summary>
+            Класс для формы со списком студентов
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.StudentList.#ctor">
+            <summary>
+            конструктор класса StudentList
+            </summary>
+        </member>
         <member name="F:LearningApp.Forms.Teacher.Actions.StudentList.components">
             <summary>
             Required designer variable.
@@ -121,6 +521,16 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Teacher.Actions.Students.StudentRegistration">
+            <summary>
+            Класс формы Регистрации студентов
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Students.StudentRegistration.#ctor">
+            <summary>
+            Конструктор класса StudentRegistration
             </summary>
         </member>
         <member name="F:LearningApp.Forms.Teacher.Actions.Students.StudentRegistration.components">
@@ -140,6 +550,16 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:LearningApp.Forms.Teacher.Actions.Tests.AddTest">
+            <summary>
+            Класс формы добавления тестов
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Tests.AddTest.#ctor">
+            <summary>
+            Конструктор класса AddTest
+            </summary>
+        </member>
         <member name="F:LearningApp.Forms.Teacher.Actions.Tests.AddTest.components">
             <summary>
             Required designer variable.
@@ -155,6 +575,16 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Teacher.Actions.Tests.TestList">
+            <summary>
+            Класс отвечающий за форму со списком тестов
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Tests.TestList.#ctor">
+            <summary>
+            Конструктор класса TestList
             </summary>
         </member>
         <member name="F:LearningApp.Forms.Teacher.Actions.Tests.TestList.components">
@@ -174,6 +604,21 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:LearningApp.Forms.Teacher.Actions.Tests.ViewTest">
+            <summary>
+            Класс отвечающия за форму ViewTest
+            </summary>
+        </member>
+        <member name="P:LearningApp.Forms.Teacher.Actions.Tests.ViewTest.Id">
+            <summary>
+            Свойство для поля _id
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Actions.Tests.ViewTest.#ctor">
+            <summary>
+            Конструктор класса ViewTest
+            </summary>
+        </member>
         <member name="F:LearningApp.Forms.Teacher.Actions.Tests.ViewTest.components">
             <summary>
             Required designer variable.
@@ -189,6 +634,16 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:LearningApp.Forms.Teacher.Menu">
+            <summary>
+            Класс формы меню
+            </summary>
+        </member>
+        <member name="M:LearningApp.Forms.Teacher.Menu.#ctor">
+            <summary>
+            Конструктор класса Menu
             </summary>
         </member>
         <member name="F:LearningApp.Forms.Teacher.Menu.components">
@@ -208,9 +663,49 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="T:LearningApp.Program">
+            <summary>
+            Класс программы
+            </summary>
+        </member>
         <member name="M:LearningApp.Program.Main">
             <summary>
-            The main entry point for the application.
+            Точка входа приложения
+            </summary>
+        </member>
+        <member name="T:LearningApp.Session">
+            <summary>
+            Структура отвечающая за хранение сессии
+            </summary>
+        </member>
+        <member name="P:LearningApp.Session.Id">
+            <summary>
+            Поле с Id пользователя
+            </summary>
+        </member>
+        <member name="P:LearningApp.Session.Name">
+            <summary>
+            Поле с именем пользователя
+            </summary>
+        </member>
+        <member name="P:LearningApp.Session.Surname">
+            <summary>
+            Поле с Фамилией пользователя
+            </summary>
+        </member>
+        <member name="P:LearningApp.Session.FatherName">
+            <summary>
+            Поле с Отчеством пользователя
+            </summary>
+        </member>
+        <member name="P:LearningApp.Session.RoleId">
+            <summary>
+            Поле с Id пользователя
+            </summary>
+        </member>
+        <member name="P:LearningApp.Session.RoleName">
+            <summary>
+            Поле с Ролью прользователя
             </summary>
         </member>
         <member name="T:LearningApp.Properties.Resources">
@@ -227,6 +722,51 @@
             <summary>
               Перезаписывает свойство CurrentUICulture текущего потока для всех
               обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+            </summary>
+        </member>
+        <member name="P:LearningApp.Properties.Resources._054_Grown_Early">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:LearningApp.Properties.Resources._073_Love_Kiss">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:LearningApp.Properties.Resources._085_October_Silence">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:LearningApp.Properties.Resources._098_Risky_Concrete">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:LearningApp.Properties.Resources._133_Orange_Juice">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:LearningApp.Properties.Resources.j6czYd0vb6A">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:LearningApp.Properties.Resources.x4xyDW_Zvo8_transformed">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:LearningApp.Properties.Resources.x4xyDW_Zvo8_transformed1">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:LearningApp.Properties.Resources.yI_I83dbdYw_transformed">
+            <summary>
+              Поиск локализованного ресурса типа System.Drawing.Bitmap.
             </summary>
         </member>
     </members>

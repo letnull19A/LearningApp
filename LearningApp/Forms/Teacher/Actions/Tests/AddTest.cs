@@ -7,13 +7,23 @@ using System.Windows.Forms;
 
 namespace LearningApp.Forms.Teacher.Actions.Tests
 {
+    /// <summary>
+    /// Класс формы добавления тестов
+    /// </summary>
     public partial class AddTest : Form
     {
+        // Поле со строкой соединения
         private readonly string _connection;
+        // Поле с текущим тестом
         private TestUnit _currentTest;
+        // Поле с текущим тестом
         private int _currentTestNumber = 0;
+        // Поле с флагом изменений
         private bool _isChanged = false;
 
+        /// <summary>
+        /// Конструктор класса AddTest
+        /// </summary>
         public AddTest()
         {
             InitializeComponent();
@@ -25,11 +35,11 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
             _connection = ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString;
         }
 
+        // Обработчик нажатия на кнопку В список тестов
         private void button1_Click(object sender, EventArgs e)
         {
             if (_isChanged == true)
             {
-
                 var ask = MessageBox.Show(
                     "У Вас есть несохранённые изменения, при выходе изменения будут утеряны",
                     "Подтветждение действий",
@@ -45,6 +55,7 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
             new TestList().Show();
         }
 
+        // Обработчик нажатия на кнопку Добавить вариант
         private void button4_Click(object sender, EventArgs e)
         {
             dataGridView1
@@ -52,6 +63,7 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
                 .Add("Введите вариант ответа", false);
         }
 
+        // Обреботчик нажатия на кнопку Удалить выбранное
         private void button5_Click(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow == null)
@@ -60,12 +72,14 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
             dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
         }
 
+        // Обработчик события загрузки формы
         private void AddTest_Load(object sender, EventArgs e)
         {
             _currentTest.Theme = "Тема теста";
             DisplayTestInfo();
         }
 
+        // Обреботчик события нажатия на кнопку Далее
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -91,6 +105,7 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
 
         }
 
+        // Обработчик нажатия на кнопку Предыдущий
         private void button3_Click(object sender, EventArgs e)
         {
             SaveVariants();
@@ -104,32 +119,38 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
             DisplayVariants();
         }
 
+        // Метод для отображения информации о тесте
         private void DisplayTestInfo()
         {
             label1.Text = $"Вопрос №{_currentTestNumber + 1}";
             richTextBox2.Text = _currentTest.Theme;
         }
 
+        // Метод для отображения вопросов 
         private void DisplayQuestion()
         {
             richTextBox1.Text = _currentTest.Questions[_currentTestNumber].Question;
         }
 
+        // Обработчик события изменения поля с темой
         private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
             _currentTest.Theme = richTextBox2.Text;
         }
 
+        // Обработчик события изменения поля с вопросом
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             _currentTest.Questions[_currentTestNumber].Question = richTextBox1.Text;
         }
 
+        // Метод для очистки вариантов ответов
         private void ClearVariants()
         {
             dataGridView1.Rows.Clear();
         }
 
+        // Метод для отображения вариантов ответов
         private void DisplayVariants()
         {
             foreach (var variant in _currentTest.Questions[_currentTestNumber].TestVariants)
@@ -138,6 +159,7 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
             }
         }
 
+        // Метод для сохранения данных в объект
         private void SaveVariants()
         {
             _currentTest
@@ -157,6 +179,7 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
             }
         }
 
+        // Обреботчик нажатия на кнопку Сохранить изменения
         private void button6_Click(object sender, EventArgs e)
         {
 
@@ -177,6 +200,7 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
             }
         }
 
+        // Метод создающий запрос в БД
         private string MakeQuery() 
         {
             return 
@@ -185,6 +209,7 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
                 CollectTestVariantsToQuery();
         }
 
+        // Метод для запроса на вставки данных тестов
         private string CollectTestData() 
         {
             string result = $"INSERT INTO tests " +
@@ -194,6 +219,7 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
             return result;
         }
 
+        // Метод для запроса на вставку вопросов теста
         private string CollectTestQuestionsToQuery()
         {
             string result = string.Empty;
@@ -212,6 +238,7 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
             return result;
         }
 
+        // Метод для запроса вставки вариантов ответов в БД
         private string CollectTestVariantsToQuery()
         {
             string result = string.Empty;
@@ -230,6 +257,23 @@ namespace LearningApp.Forms.Teacher.Actions.Tests
             });
 
             return result;
+        }
+
+        // Обработчик события нажатия на ячейку в DataGridView
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                row.Cells[1].Value = false;
+            }
+
+            dataGridView1.CurrentRow.Cells[1].Value = true;
+        }
+
+        // Обработчик события закрытия формы
+        private void AddTest_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            button1_Click(sender, e);
         }
     }
 }

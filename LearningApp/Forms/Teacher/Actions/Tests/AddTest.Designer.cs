@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTest));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -49,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(107, 172);
+            this.label1.Location = new System.Drawing.Point(107, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 24);
             this.label1.TabIndex = 0;
@@ -57,9 +59,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(686, 536);
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(686, 522);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 23);
+            this.button2.Size = new System.Drawing.Size(96, 37);
             this.button2.TabIndex = 3;
             this.button2.Text = "Далее";
             this.button2.UseVisualStyleBackColor = true;
@@ -67,9 +73,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(584, 536);
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(560, 522);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(96, 23);
+            this.button3.Size = new System.Drawing.Size(120, 37);
             this.button3.TabIndex = 4;
             this.button3.Text = "Предыдущий";
             this.button3.UseVisualStyleBackColor = true;
@@ -79,7 +89,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(105, 210);
+            this.label2.Location = new System.Drawing.Point(105, 222);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(189, 20);
             this.label2.TabIndex = 5;
@@ -87,7 +97,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(109, 233);
+            this.richTextBox1.Location = new System.Drawing.Point(109, 245);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(586, 69);
             this.richTextBox1.TabIndex = 6;
@@ -98,16 +108,26 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AnswerField,
             this.IsRightAnswer});
-            this.dataGridView1.Location = new System.Drawing.Point(109, 318);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(109, 330);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(586, 168);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // AnswerField
             // 
@@ -123,9 +143,14 @@
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::LearningApp.Properties.Resources._133_Orange_Juice;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
+            this.button1.Size = new System.Drawing.Size(161, 39);
             this.button1.TabIndex = 10;
             this.button1.Text = "В список тестов";
             this.button1.UseVisualStyleBackColor = true;
@@ -133,9 +158,13 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(109, 492);
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Location = new System.Drawing.Point(109, 504);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(117, 23);
+            this.button4.Size = new System.Drawing.Size(167, 36);
             this.button4.TabIndex = 11;
             this.button4.Text = "Добавить вариант";
             this.button4.UseVisualStyleBackColor = true;
@@ -143,9 +172,13 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(232, 492);
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Location = new System.Drawing.Point(282, 504);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(134, 23);
+            this.button5.Size = new System.Drawing.Size(171, 36);
             this.button5.TabIndex = 12;
             this.button5.Text = "Удалить выбранное";
             this.button5.UseVisualStyleBackColor = true;
@@ -153,9 +186,14 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(150, 12);
+            this.button6.BackgroundImage = global::LearningApp.Properties.Resources._054_Grown_Early;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(181, 12);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(144, 23);
+            this.button6.Size = new System.Drawing.Size(185, 39);
             this.button6.TabIndex = 13;
             this.button6.Text = "Сохранить изменения";
             this.button6.UseVisualStyleBackColor = true;
@@ -165,7 +203,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(107, 54);
+            this.label3.Location = new System.Drawing.Point(107, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 20);
             this.label3.TabIndex = 14;
@@ -173,7 +211,7 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(109, 77);
+            this.richTextBox2.Location = new System.Drawing.Point(109, 89);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(586, 82);
             this.richTextBox2.TabIndex = 15;
@@ -184,6 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::LearningApp.Properties.Resources.j6czYd0vb6A;
             this.ClientSize = new System.Drawing.Size(794, 571);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.label3);
@@ -198,9 +237,14 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(810, 610);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(810, 610);
             this.Name = "AddTest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление тестов";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddTest_FormClosed);
             this.Load += new System.EventHandler(this.AddTest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

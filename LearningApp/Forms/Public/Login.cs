@@ -7,15 +7,23 @@ using Microsoft.Data.SqlClient;
 
 namespace LearningApp.Forms.Public
 {
+    /// <summary>
+    /// Класс Login отвечает за обработку событий формы Login
+    /// </summary>
     public partial class Login : Form
     {
         private readonly string _connection;
+        
+        /// <summary>
+        /// Конвтруктор класса Login
+        /// </summary>
         public Login()
         {
             InitializeComponent();
             _connection = ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString;
         }
 
+        // Подписка на событие загрузки формы
         private void Login_Load(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(_connection);
@@ -37,6 +45,7 @@ namespace LearningApp.Forms.Public
             }
         }
 
+        // Обработчик нажатия на кнопку авторизации
         private async void button1_Click(object sender, EventArgs e)
         {
             var login = loginField.Text ?? string.Empty;
@@ -61,6 +70,7 @@ namespace LearningApp.Forms.Public
                 {
                     ApplicationContext.StartSession(new Session
                     {
+                        Id = Convert.ToInt32(reader["id"].ToString()),
                         Name = reader["name"].ToString(),
                         Surname = reader["surname"].ToString(),
                         RoleId = Convert.ToInt32(reader["roleId"].ToString()),
@@ -85,7 +95,6 @@ namespace LearningApp.Forms.Public
                     }
 
                     menu?.Show();
-                    menu.FormClosed += (a, c) => Application.Exit();
                     Hide();
                 }
                 else
@@ -98,20 +107,39 @@ namespace LearningApp.Forms.Public
             }
         }
 
+        // Метод для очистки формы
         private void ClearForm()
         {
             loginField.Text = string.Empty;
             passwordField.Text = string.Empty;
         }
 
+        // Метод для обработки нажатия по ToolStrip
         private void configureToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Settings().ShowDialog();
         }
 
+        // Метод для обработки нажатия по ToolStrip
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Guide().ShowDialog();
+            Help.ShowHelp(
+                this,
+                AppDomain.CurrentDomain.BaseDirectory + ConfigurationManager.AppSettings.Get("helpFileName"),
+                HelpNavigator.Topic);
+        }
+
+        // Обработчик события закрытия формы
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            new StartForm().Show();
+        }
+
+        // Обработчик события перехода в начальную форму
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new StartForm().Show();
         }
     }
 }
